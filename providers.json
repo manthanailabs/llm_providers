@@ -5,9 +5,9 @@
       "id": 1,
       "name": "OpenAI",
       "providerType": 0,
-      "version": 2,
+      "version": 1,
       "requestPacket": "{\"model\": \"gpt-4o\", \"messages\": [{\"role\": \"user\", \"content\": \"\"}]}",
-      "responsePacket": "...",
+      "responsePacket": "{\"id\": \"chatcmpl-123\", \"object\": \"chat.completion\", \"choices\": [{\"message\": {\"role\": \"assistant\", \"content\": \"Once upon a time...\"}}], \"usage\": {\"prompt_tokens\": 15, \"completion_tokens\": 40}}",
       "promptJsonPath": "$.messages[0].content",
       "responseJsonPath": "$.choices[0].message.content",
       "errorJsonPath": "$.error.message",
@@ -15,17 +15,56 @@
       "outputTokensJsonPath": "$.usage.completion_tokens"
     },
     {
+      "id": 2,
+      "name": "Anthropic",
+      "providerType": 1,
+      "version": 1,
+      "requestPacket": "{\"model\": \"claude-3-5-sonnet-latest\", \"max_tokens\": 1024, \"messages\": [{\"role\": \"user\", \"content\": \"\"}]}",
+      "responsePacket": "{\"id\": \"msg_01X\", \"type\": \"message\", \"role\": \"assistant\", \"content\": [{\"type\": \"text\", \"text\": \"Once upon a time...\"}], \"usage\": {\"input_tokens\": 12, \"output_tokens\": 38}}",
+      "promptJsonPath": "$.messages[0].content",
+      "responseJsonPath": "$.content[0].text",
+      "errorJsonPath": "$.error.message",
+      "inputTokensJsonPath": "$.usage.input_tokens",
+      "outputTokensJsonPath": "$.usage.output_tokens"
+    },
+    {
       "id": 3,
       "name": "Google Gemini",
       "providerType": 2,
-      "version": 2,
+      "version": 1,
       "requestPacket": "{\"contents\": [{\"parts\": [{\"text\": \"\"}]}]}",
-      "responsePacket": "...",
+      "responsePacket": "{\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"Once upon a time...\"}]}}], \"usageMetadata\": {\"promptTokenCount\": 14, \"candidatesTokenCount\": 42}}",
       "promptJsonPath": "$.contents[0].parts[0].text",
       "responseJsonPath": "$.candidates[0].content.parts[0].text",
       "errorJsonPath": "$.error.message",
       "inputTokensJsonPath": "$.usageMetadata.promptTokenCount",
       "outputTokensJsonPath": "$.usageMetadata.candidatesTokenCount"
+    },
+    {
+      "id": 4,
+      "name": "llama.cpp",
+      "providerType": 3,
+      "version": 1,
+      "requestPacket": "{\"prompt\": \"\", \"n_predict\": 128}",
+      "responsePacket": "{\"content\": \"Once upon a time...\", \"stop\": true, \"tokens_evaluated\": 10, \"tokens_predicted\": 35}",
+      "promptJsonPath": "$.prompt",
+      "responseJsonPath": "$.content",
+      "errorJsonPath": "$.error.message",
+      "inputTokensJsonPath": "$.tokens_evaluated",
+      "outputTokensJsonPath": "$.tokens_predicted"
+    },
+    {
+      "id": 5,
+      "name": "Ollama",
+      "providerType": 4,
+      "version": 1,
+      "requestPacket": "{\"model\": \"llama3.2\", \"prompt\": \"\", \"stream\": false}",
+      "responsePacket": "{\"model\": \"llama3.2\", \"response\": \"Once upon a time...\", \"done\": true, \"prompt_eval_count\": 12, \"eval_count\": 36}",
+      "promptJsonPath": "$.prompt",
+      "responseJsonPath": "$.response",
+      "errorJsonPath": "$.error.message",
+      "inputTokensJsonPath": "$.prompt_eval_count",
+      "outputTokensJsonPath": "$.eval_count"
     }
   ]
 }
