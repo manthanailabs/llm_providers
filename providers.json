@@ -55,7 +55,7 @@
     },
     {
       "id": 5,
-      "name": "Ollama",
+      "name": "Ollama1",
       "providerType": 4,
       "version": 1,
       "requestPacket": "{\"model\": \"llama3.2\", \"prompt\": \"\", \"stream\": false}",
