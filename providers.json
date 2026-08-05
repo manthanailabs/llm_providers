@@ -1,0 +1,31 @@
+{
+  "manifestVersion": 1,
+  "profiles": [
+    {
+      "id": 1,
+      "name": "OpenAI",
+      "providerType": 0,
+      "version": 2,
+      "requestPacket": "{\"model\": \"gpt-4o\", \"messages\": [{\"role\": \"user\", \"content\": \"\"}]}",
+      "responsePacket": "...",
+      "promptJsonPath": "$.messages[0].content",
+      "responseJsonPath": "$.choices[0].message.content",
+      "errorJsonPath": "$.error.message",
+      "inputTokensJsonPath": "$.usage.prompt_tokens",
+      "outputTokensJsonPath": "$.usage.completion_tokens"
+    },
+    {
+      "id": 3,
+      "name": "Google Gemini",
+      "providerType": 2,
+      "version": 2,
+      "requestPacket": "{\"contents\": [{\"parts\": [{\"text\": \"\"}]}]}",
+      "responsePacket": "...",
+      "promptJsonPath": "$.contents[0].parts[0].text",
+      "responseJsonPath": "$.candidates[0].content.parts[0].text",
+      "errorJsonPath": "$.error.message",
+      "inputTokensJsonPath": "$.usageMetadata.promptTokenCount",
+      "outputTokensJsonPath": "$.usageMetadata.candidatesTokenCount"
+    }
+  ]
+}
