@@ -57,7 +57,7 @@
       "id": 5,
       "name": "Ollama1",
       "providerType": 4,
-      "version": 1,
+      "version": 2,
       "requestPacket": "{\"model\": \"llama3.3\", \"prompt\": \"\", \"stream\": false}",
       "responsePacket": "{\"model\": \"llama3.3\", \"response\": \"Once upon a time...\", \"done\": true, \"prompt_eval_count\": 12, \"eval_count\": 36}",
       "promptJsonPath": "$.prompt",
