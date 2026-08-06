@@ -1,21 +1,21 @@
 {
-  "manifestVersion": 3,
+  "manifestVersion": 4,
   "profiles": [
     {
       "id": 1,
       "name": "OpenAI",
       "providerType": 0,
-      "version": 2,
+      "version": 3,
       "authType": 1,
       "authHeaderName": null,
       "defaultHeadersJson": null,
-      "requestPacket": "{\"model\": \"gpt-4o\", \"messages\": [{\"role\": \"user\", \"content\": \"\"}]}",
-      "responsePacket": "{\"id\": \"chatcmpl-123\", \"object\": \"chat.completion\", \"choices\": [{\"message\": {\"role\": \"assistant\", \"content\": \"Once upon a time...\"}}], \"usage\": {\"prompt_tokens\": 15, \"completion_tokens\": 40}}",
-      "promptJsonPath": "$.messages[0].content",
-      "responseJsonPath": "$.choices[0].message.content",
+      "requestPacket": "{\"model\": \"gpt-4o\", \"input\": \"\"}",
+      "responsePacket": "{\"id\": \"resp_123\", \"object\": \"response\", \"status\": \"completed\", \"output\": [{\"type\": \"message\", \"role\": \"assistant\", \"content\": [{\"type\": \"output_text\", \"text\": \"Once upon a time...\"}]}], \"usage\": {\"input_tokens\": 36, \"output_tokens\": 87}}",
+      "promptJsonPath": "$.input",
+      "responseJsonPath": "$.output[0].content[0].text",
       "errorJsonPath": "$.error.message",
-      "inputTokensJsonPath": "$.usage.prompt_tokens",
-      "outputTokensJsonPath": "$.usage.completion_tokens"
+      "inputTokensJsonPath": "$.usage.input_tokens",
+      "outputTokensJsonPath": "$.usage.output_tokens"
     },
     {
       "id": 2,
