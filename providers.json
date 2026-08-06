@@ -1,5 +1,5 @@
 {
-  "manifestVersion": 2,
+  "manifestVersion": 3,
   "profiles": [
     {
       "id": 1,
@@ -37,17 +37,17 @@
       "id": 3,
       "name": "Google Gemini",
       "providerType": 2,
-      "version": 2,
+      "version": 3,
       "authType": 3,
       "authHeaderName": "key",
       "defaultHeadersJson": null,
-      "requestPacket": "{\"contents\": [{\"parts\": [{\"text\": \"\"}]}]}",
-      "responsePacket": "{\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"Once upon a time...\"}]}}], \"usageMetadata\": {\"promptTokenCount\": 14, \"candidatesTokenCount\": 42}}",
-      "promptJsonPath": "$.contents[0].parts[0].text",
-      "responseJsonPath": "$.candidates[0].content.parts[0].text",
+      "requestPacket": "{\"model\": \"models/gemini-2.5-flash-lite\", \"input\": \"\", \"generation_config\": {\"temperature\": 1, \"max_output_tokens\": 65536, \"top_p\": 0.95}}",
+      "responsePacket": "{\"status\": \"completed\", \"usage\": {\"total_input_tokens\": 2, \"total_output_tokens\": 10}, \"steps\": [{\"type\": \"thought\"}, {\"content\": [{\"text\": \"Hello there!\", \"type\": \"text\"}], \"type\": \"model_output\"}]}",
+      "promptJsonPath": "$.input",
+      "responseJsonPath": "$.steps[1].content[0].text",
       "errorJsonPath": "$.error.message",
-      "inputTokensJsonPath": "$.usageMetadata.promptTokenCount",
-      "outputTokensJsonPath": "$.usageMetadata.candidatesTokenCount"
+      "inputTokensJsonPath": "$.usage.total_input_tokens",
+      "outputTokensJsonPath": "$.usage.total_output_tokens"
     },
     {
       "id": 4,
