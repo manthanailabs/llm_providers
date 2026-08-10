@@ -2,7 +2,7 @@
   "manifestVersion": 4,
   "profiles": [
     {
-      "id": 1,
+      "providerKey": "core_openai",
       "name": "OpenAI",
       "providerType": 0,
       "version": 3,
@@ -19,7 +19,7 @@
       "outputTokensJsonPath": "$.usage.output_tokens"
     },
     {
-      "id": 2,
+      "providerKey": "core_anthropic",
       "name": "Anthropic",
       "providerType": 1,
       "version": 2,
@@ -36,7 +36,7 @@
       "outputTokensJsonPath": "$.usage.output_tokens"
     },
     {
-      "id": 3,
+      "providerKey": "core_gemini",
       "name": "Google Gemini",
       "providerType": 2,
       "version": 3,
@@ -53,7 +53,7 @@
       "outputTokensJsonPath": "$.usage.total_output_tokens"
     },
     {
-      "id": 4,
+      "providerKey": "core_ollama",
       "name": "Ollama",
       "providerType": 4,
       "version": 2,
@@ -70,7 +70,7 @@
       "outputTokensJsonPath": "$.eval_count"
     },
     {
-      "id": 5,
+      "providerKey": "core_meta",
       "name": "Meta",
       "providerType": 0,
       "version": 3,
