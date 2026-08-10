@@ -85,7 +85,7 @@
       "id": 6,
       "name": "Meta",
       "providerType": 0,
-      "version": 6,
+      "version": 1,
       "authType": 1,
       "authHeaderName": null,
       "defaultHeadersJson": "{\r\n  \"Content-Type\": \"application/json\",\r\n  \"Accept\": \"text/event-stream\"\r\n}",
