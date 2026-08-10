@@ -70,6 +70,23 @@
       "outputTokensJsonPath": "$.eval_count"
     },
     {
+      "providerKey": "core_local_gguf",
+      "name": "Local GGUF Model",
+      "providerType": 3,
+      "version": 1,
+      "authType": 1,
+      "authHeaderName": null,
+      "defaultHeadersJson": null,
+      "apiEndpoint": "http://localhost:8080/completion",
+      "requestPacket": "{\"model\": \"local-gguf\", \"prompt\": \"\", \"n_predict\": 2048, \"temperature\": 0.7, \"stream\": true}",
+      "responsePacket": "{\"content\": \"Once upon a time...\", \"stop\": true, \"tokens_evaluated\": 14, \"tokens_predicted\": 42}",
+      "promptJsonPath": "$.prompt",
+      "responseJsonPath": "$.content",
+      "errorJsonPath": "$.error.message",
+      "inputTokensJsonPath": "$.tokens_evaluated",
+      "outputTokensJsonPath": "$.tokens_predicted"
+    },
+    {
       "providerKey": "core_meta",
       "name": "Meta",
       "providerType": 0,
