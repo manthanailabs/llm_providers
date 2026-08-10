@@ -67,7 +67,7 @@
     },
     {
       "id": 5,
-      "name": "Ollama1",
+      "name": "Ollama",
       "providerType": 4,
       "version": 2,
       "authType": 1,
